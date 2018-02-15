@@ -1,23 +1,40 @@
 .App {
+  text-align: left;
+}
+
+
+.Mylist{
+  list-style-type:none;
+  padding-left: 2in;
+}
+
+.list{
+  margin: 30px
+}
+
+.App-header{
   text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+table{
+  width: 100%;
+}
+.Table-mobileNo{
+  padding-left: 20%;
+}
+.Table-cost{
+  padding-right: 20%;
+  text-align: right;
+}
+tr{
+  padding-bottom: 20px
+}
+th{
+  font-size: 25px;
+  text-align:center;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
 
-.App-intro {
-  font-size: large;
-}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+
+
