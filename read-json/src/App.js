@@ -3,21 +3,12 @@ import data from "./PhoneCallingCost.json";
 import "./App.css";
 
 class App extends Component {
-  constructor(props){
-    this.props = this.state.props;
-  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1>Customer Total Cost</h1>
         </header>
-        <form>
-          <label>
-            mobileNo:
-            <input onChange type="text" name="mobileNo" />
-          </label>
-        </form>
         <table>
           <tr>
             <th>Mobile No.</th>
