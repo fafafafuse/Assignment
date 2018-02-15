@@ -1,5 +1,5 @@
 # Assignment
-the source code for sending the assignment to MFEC.
+the source code of the assignment.
 
 หลักการทำงานส่วน JAVA (CalPhoneCost)
 1. ReadFromFile.java จะรับไฟล์ promotion1.log เข้ามา แล้วแปลงรูปแบบเป็น String JSON
