@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header"><h1>Customer Toal Cost</h1></header>
+        <header className="App-header"><h1>Customer Total Cost</h1></header>
         
         <table>
         <tr><th>Mobile No.</th><th>Total Cost (baht)</th></tr>
