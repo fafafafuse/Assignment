@@ -32,12 +32,12 @@ public class ReadFromFile {
      */
     public static void main(String[] args) throws IOException {
         try {
-            Path fileIn = Paths.get("src/javaapplication1/promotion1.log");
+            Path fileIn = Paths.get("../promotion1.log");
             BufferedReader reader = Files.newBufferedReader(fileIn, StandardCharsets.UTF_8);
             String line = null;
             String json = "[";
             while ((line = reader.readLine()) != null) {
-                int count = 0;
+                int count = 0; //ใช้ count มานับว่าเป็นข้อมูลอะไร
                 if (count > 4) {
                     count = 0;
                 }
@@ -80,7 +80,7 @@ public class ReadFromFile {
                 phone.setStartTime(jsonObj.getString("startTime"));
                 phone.setEndTime(jsonObj.getString("endTime"));
                 phone.setMobileNo(jsonObj.getString("mobileNo"));
-                phone.setCost(phone.CalcCost(phone));
+                phone.setCost(CalcCost(phone));
                 outJson += "," + "\n" + gson.toJson(phone); //แปลงObject กลับเป็น JSON ด้วย GSON รวมทั้งจัดFormat ให้แต่ละเบอร์เว้นบรรทัด
             }
 
@@ -98,7 +98,7 @@ public class ReadFromFile {
         }
 
     }
-    public double CalcCost(CallingHistory phone) throws ParseException {
+        static double CalcCost(CallingHistory phone) throws ParseException {
         double result = 0;
         DateFormat df = new SimpleDateFormat("HH:mm:ss");
         Date start = df.parse(phone.getStartTime());
