@@ -1,4 +1,4 @@
-# mfec-assignment
+# Assignment
 the source code for sending the assignment to MFEC.
 
 หลักการทำงานส่วน JAVA (CalPhoneCost)
