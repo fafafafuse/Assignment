@@ -10,7 +10,7 @@ class App extends Component {
         <header className="App-header"><h1>Customer Toal Cost</h1></header>
         
         <table>
-        <tr><th>Mobile No.</th><th>Total Cost</th></tr>
+        <tr><th>Mobile No.</th><th>Total Cost (baht)</th></tr>
         {
           data.map(function(phone){
             return <tr className="list">

@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  letter-spacing: 2px;
 }
 
 
@@ -20,14 +21,11 @@ table{
   width: 100%;
 }
 .Table-mobileNo{
-  padding-left: 20%;
+  padding-left: 25%;
 }
 .Table-cost{
   padding-right: 20%;
   text-align: right;
-}
-tr{
-  padding-bottom: 20px
 }
 th{
   font-size: 25px;
