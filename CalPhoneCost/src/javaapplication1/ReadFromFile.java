@@ -37,7 +37,7 @@ public class ReadFromFile {
             String line = null;
             String json = "[";
             while ((line = reader.readLine()) != null) {
-                int count = 0;
+                int count = 0; //ใช้ count มานับว่าเป็นข้อมูลอะไร
                 if (count > 4) {
                     count = 0;
                 }
@@ -98,7 +98,8 @@ public class ReadFromFile {
         }
 
     }
-    static double CalcCost(CallingHistory phone) throws ParseException { //method หา Cost
+  static double CalcCost(CallingHistory phone) throws ParseException { //method หา Cost
+
         double result = 0;
         DateFormat df = new SimpleDateFormat("HH:mm:ss"); //สำหรับแปลง String time เป็น Date 
         Date start = df.parse(phone.getStartTime());

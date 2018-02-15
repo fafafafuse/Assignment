@@ -66,7 +66,6 @@ public class CallingHistory {
         this.mobileNo = mobileNo;
     }
 
-
     @Override
     public String toString() {
         String result = "MobileNo: " + mobileNo
