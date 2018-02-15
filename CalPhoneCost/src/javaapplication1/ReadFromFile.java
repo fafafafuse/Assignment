@@ -14,8 +14,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -23,14 +25,14 @@ import org.json.JSONObject;
  *
  * @author fline
  */
-public class ReadFromFile3 {
+public class ReadFromFile {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
         try {
-            Path fileIn = Paths.get("F:\\promotion1.log");
+            Path fileIn = Paths.get("src/javaapplication1/promotion1.log");
             BufferedReader reader = Files.newBufferedReader(fileIn, StandardCharsets.UTF_8);
             String line = null;
             String json = "[";
@@ -84,7 +86,7 @@ public class ReadFromFile3 {
 
             String output = outJson.substring(1, outJson.length()); //ตัด , ที่เกินมาตอนจัดFormat
 
-            Path fileOut = Paths.get("F:\\PhoneCallingCost.json");
+            Path fileOut = Paths.get("../PhoneCallingCost.json");
             BufferedWriter writer = Files.newBufferedWriter(fileOut,
                     StandardCharsets.UTF_8);
 
@@ -95,5 +97,16 @@ public class ReadFromFile3 {
             System.out.print(e);
         }
 
+    }
+    public double CalcCost(CallingHistory phone) throws ParseException {
+        double result = 0;
+        DateFormat df = new SimpleDateFormat("HH:mm:ss");
+        Date start = df.parse(phone.getStartTime());
+        Date end = df.parse(phone.getEndTime());
+        long diff = end.getTime() - start.getTime();
+        int secondDiff = (int) (diff / 1000);
+        result = 3 + ((secondDiff - 60) * 1.0 / 60.0);
+
+        return result;
     }
 }
