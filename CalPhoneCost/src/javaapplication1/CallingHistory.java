@@ -66,17 +66,6 @@ public class CallingHistory {
         this.mobileNo = mobileNo;
     }
 
-    public double CalcCost(CallingHistory phone) throws ParseException {
-        double result = 0;
-        DateFormat df = new SimpleDateFormat("HH:mm:ss");
-        Date start = df.parse(phone.startTime);
-        Date end = df.parse(phone.endTime);
-        long diff = end.getTime() - start.getTime();
-        int secondDiff = (int) (diff / 1000);
-        result = 3 + ((secondDiff - 60) * 1.0 / 60.0);
-
-        return result;
-    }
 
     @Override
     public String toString() {

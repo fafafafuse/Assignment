@@ -80,7 +80,7 @@ public class ReadFromFile {
                 phone.setStartTime(jsonObj.getString("startTime"));
                 phone.setEndTime(jsonObj.getString("endTime"));
                 phone.setMobileNo(jsonObj.getString("mobileNo"));
-                phone.setCost(phone.CalcCost(phone));
+                phone.setCost(CalcCost(phone));
                 outJson += "," + "\n" + gson.toJson(phone); //แปลงObject กลับเป็น JSON ด้วย GSON รวมทั้งจัดFormat ให้แต่ละเบอร์เว้นบรรทัด
             }
 
@@ -98,7 +98,7 @@ public class ReadFromFile {
         }
 
     }
-    public double CalcCost(CallingHistory phone) throws ParseException { //method หา Cost
+    static double CalcCost(CallingHistory phone) throws ParseException { //method หา Cost
         double result = 0;
         DateFormat df = new SimpleDateFormat("HH:mm:ss"); //สำหรับแปลง String time เป็น Date 
         Date start = df.parse(phone.getStartTime());
