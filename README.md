@@ -1,9 +1,11 @@
 # mfec-assignment
 the source code for sending the assignment to MFEC.
 
-CallingHistory.java เป็น class ที่ทำไว้เพื่อเตรียมรับข้อมูลจาก log มาเก็บเป็น Object
+หลักการทำงานส่วน JAVA
+1. ReadFromFile.java จะรับไฟล์ promotion1.log เข้ามา แล้วแปลงรูปแบบเป็น String JSON
+2. นำ String JSON ที่ได้มาทำเป็น JSONArray และ ใช้ JSONObject อ้างถึง Object แต่ละตัวใน JSONArray มา assign ลงใน Object ของ CallingHistory
+3. CallingHistory.java เป็นคลาสที่เอาไว้รองรับสำหรับ Object JSON แต่ละตัวเพื่อนำมาคำนวณอีกต่อนึง
+4. ใช้ method CalcCost(CallingHistory phone) เพื่อคำนวณหาค่าโทรศัพท์ของแต่ละเบอร์ แล้วมา assign กลับไปที่ Object ของ CallingHistory อีกรอบ
+5. ใช้ GSON ในการแปลง object ของ CallingHistory เป็น JSON และเขียนเป็นไฟล์ PhoneCallingCost.json ออกมาไว้ใน read-json/src
 
-ReadFromFile.java 
-1.จะแปลง log เป็น json ก่อน โดยใช้ BufferReader อ่านทีละบรรทัด แล้วตัดข้อมลแต่ละช่วงเพื่อมา re-format ใหม่เป็น json
-2.ใช้ JSONArray มาเก็บ json ไว้เพื่อเอามาloop for ใช้ JSONObject แยกแต่ละตัวมา set ลงใน object ของคลาส CallingHistory
-3.
+ส่วน React - ทำหน้าเว็บง่ายๆ import ไฟล์ PhoneCallingCost.json แล้วนำมาแสดงในรูปแบบของตาราง
