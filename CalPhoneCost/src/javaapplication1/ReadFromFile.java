@@ -32,7 +32,7 @@ public class ReadFromFile {
      */
     public static void main(String[] args) throws IOException {
         try {
-            Path fileIn = Paths.get("src/javaapplication1/promotion1.log");
+            Path fileIn = Paths.get("../promotion1.log");
             BufferedReader reader = Files.newBufferedReader(fileIn, StandardCharsets.UTF_8);
             String line = null;
             String json = "[";
@@ -86,7 +86,7 @@ public class ReadFromFile {
 
             String output = outJson.substring(1, outJson.length()); //ตัด , ที่เกินมาตอนจัดFormat
 
-            Path fileOut = Paths.get("../PhoneCallingCost.json");
+            Path fileOut = Paths.get("../read-json/src/PhoneCallingCost.json");
             BufferedWriter writer = Files.newBufferedWriter(fileOut,
                     StandardCharsets.UTF_8);
 
