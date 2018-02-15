@@ -1,26 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import data from './PhoneCallingCost.json';
-import './App.css';
+import React, { Component } from "react";
+import data from "./PhoneCallingCost.json";
+import "./App.css";
 
 class App extends Component {
+  constructor(props){
+    this.props = this.state.props;
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header"><h1>Customer Total Cost</h1></header>
-        
+        <header className="App-header">
+          <h1>Customer Total Cost</h1>
+        </header>
+        <form>
+          <label>
+            mobileNo:
+            <input onChange type="text" name="mobileNo" />
+          </label>
+        </form>
         <table>
-        <tr><th>Mobile No.</th><th>Total Cost (baht)</th></tr>
-        {
-          data.map(function(phone){
-            return <tr className="list">
-            <td className="Table-mobileNo">{phone.mobileNo}</td>  
-            <td className="Table-cost">{phone.cost.toFixed(2)}</td>
-            </tr>
-          })
-        }
+          <tr>
+            <th>Mobile No.</th>
+            <th>Total Cost (baht)</th>
+          </tr>
+          {data.map(function(phone) {
+            return (
+              <tr className="list">
+                <td className="Table-mobileNo">{phone.mobileNo}</td>
+                <td className="Table-cost">{phone.cost.toFixed(2)}</td>
+              </tr>
+            );
+          })}
         </table>
-        </div>
+      </div>
     );
   }
 }
