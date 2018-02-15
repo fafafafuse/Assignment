@@ -101,9 +101,9 @@ public class ReadFromFile {
   static double CalcCost(CallingHistory phone) throws ParseException { //method หา Cost
 
         double result = 0;
-        DateFormat df = new SimpleDateFormat("HH:mm:ss"); //สำหรับแปลง String time เป็น Date 
-        Date start = df.parse(phone.getStartTime());
-        Date end = df.parse(phone.getEndTime());
+        DateFormat df = new SimpleDateFormat("dd/mm/yy HH:mm:ss"); //สำหรับแปลง String time เป็น Date 
+        Date start = df.parse(phone.getDate()+" "+phone.getStartTime());
+        Date end = df.parse(phone.getDate()+" "+phone.getEndTime());
         long diff = end.getTime() - start.getTime(); //หาค่าความต่างของเวลา
         int secondDiff = (int) (diff / 1000); //เปลี่ยนdiff เป็นความต่างในระดับ วินาที
         if (secondDiff <= 60){ //ถ้าโทรไม่เกิน 1 นาที คิดตามโปร 1 นาทีแรก 3 บาท

@@ -20,7 +20,7 @@ public class CallingHistory {
     private String date;
     private String startTime;
     private String endTime;
-    
+
     @Expose
     private String mobileNo;
     @Expose
@@ -28,6 +28,10 @@ public class CallingHistory {
 
     public CallingHistory() {
 
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public String getStartTime() {
@@ -64,14 +68,6 @@ public class CallingHistory {
 
     public void setMobileNo(String mobileNo) {
         this.mobileNo = mobileNo;
-    }
-
-    @Override
-    public String toString() {
-        String result = "MobileNo: " + mobileNo
-                + "\nCost: " + cost;
-
-        return result;
     }
 
 }
